@@ -807,6 +807,8 @@ rl_getc (FILE *stream)
   int fd;
 #if defined (HAVE_PSELECT)
   sigset_t empty_set;
+#endif
+#if defined (HAVE_PSELECT) || (HAVE_SELECT)
   fd_set readfds;
 #endif
 

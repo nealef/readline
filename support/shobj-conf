@@ -132,6 +132,14 @@ linux*-*|gnu*-*|k*bsd*-gnu-*|midnightbsd*|freebsd*|dragonfly*)
 	SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)$(SHLIB_MINOR)'
 	;;
 
+openedition*)
+    SHOBJ_CFLAGS="-qdll -qascii -qxplink"
+    SHOBJ_LD=${CC}
+    SHOBJ_LDFLAGS=-Wl,dll -q32
+    SHOBJ_XLDFLAGS=
+	SHLIB_LIBVERSION=
+	;;
+
 # Darwin/MacOS X
 darwin*)
 	# Common definitions for all darwin/mac os x versions
